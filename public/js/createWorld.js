@@ -4,7 +4,7 @@ const createWorld = (numberOfColumns) => {
   let bacterium = [];
   let positionX = 0;
   let positionY = 0;
-  const alive = false;
+  let alive = false;
 
   for (let i = 0; i < numberOfColumns; i++) {
     bacterium.push(positionX, positionY, alive);
@@ -12,9 +12,10 @@ const createWorld = (numberOfColumns) => {
     positionY++;
     column.push(bacterium);
     bacterium = [];
+    world.push(column);
   }
 
   return world;
 };
-
+createWorld(5);
 export default createWorld;
