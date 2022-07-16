@@ -1,21 +1,18 @@
-const createWorld = (numberOfColumns) => {
-  const world = [];
-  const column = [];
-  let bacterium = [];
-  let positionX = 0;
-  let positionY = 0;
-  let alive = false;
+import createBacterium from "./createBacterium.js";
 
-  for (let i = 0; i < numberOfColumns; i++) {
-    bacterium.push(positionX, positionY, alive);
-    positionX++;
-    positionY++;
-    column.push(bacterium);
-    bacterium = [];
-    world.push(column);
+const createWorld = (numberOfRows) => {
+  const world = [];
+  let row = [];
+
+  for (let i = 0; i < numberOfRows + 1; i++) {
+    world.push(row);
+    row = [];
+    for (let j = 0; j < numberOfRows; j++) {
+      row.push(createBacterium());
+    }
   }
+  world.shift();
 
   return world;
 };
-createWorld(5);
 export default createWorld;

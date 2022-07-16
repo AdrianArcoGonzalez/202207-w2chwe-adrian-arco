@@ -1,3 +1,5 @@
 import createWorld from "./createWorld.js";
 
-createWorld(5);
+console.log("hola");
+
+console.log(createWorld(5));
