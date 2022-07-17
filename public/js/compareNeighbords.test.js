@@ -8,8 +8,8 @@ describe("Given a compareNeighBords function that check for an object status as 
         [{ alive: false }, { alive: false }, { alive: true }, { alive: false }],
         [{ alive: true }, { alive: true }, { alive: false }, { alive: true }],
         [{ alive: true }, { alive: false }, { alive: false }, { alive: false }],
-        [{ alive: 12 }, { alive: false }, { alive: 13 }, { alive: false }],
-        [{ alive: 14 }, { alive: false }, { alive: 15 }, { alive: false }],
+        [{ alive: false }, { alive: false }, { alive: true }, { alive: false }],
+        [{ alive: false }, { alive: false }, { alive: true }, { alive: false }],
       ];
 
       const rowToCheck = 1;
@@ -21,7 +21,7 @@ describe("Given a compareNeighBords function that check for an object status as 
         columnToCheck
       );
 
-      expect(expectedReturn).toBe(realReturnResult);
+      expect(expectedReturn).toEqual(realReturnResult);
     });
   });
 });
