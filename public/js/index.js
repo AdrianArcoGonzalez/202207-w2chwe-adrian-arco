@@ -1,5 +1,9 @@
 import createWorld from "./createWorld.js";
+import worldReader from "./worldReader.js";
 
-console.log("hola");
+const main = () => {
+  const worldCreated = createWorld(5);
+  worldReader(worldCreated);
+};
 
-console.log(createWorld(5));
+main();
