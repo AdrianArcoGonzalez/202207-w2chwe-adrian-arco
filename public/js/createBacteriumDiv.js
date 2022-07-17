@@ -18,11 +18,16 @@ const createWorldHtml = (worldToGenerate) => {
         cellHouse.setAttribute("id", "bacteriumAlive");
       } else if (bacteriumHouse.alive === false) {
         cellHouse.setAttribute("id", "bacteriumDead");
-      } else {
-        console.log("no va");
       }
     });
   });
 };
 
+setInterval(() => {
+  const divWorldContainer = document.getElementById("world-container");
+  divWorldContainer.remove();
+
+  gridWithLife = cellChanger(gridWithLife);
+  createdHtmlGrid(gridWithLife);
+}, 1000);
 export default createWorldHtml;
