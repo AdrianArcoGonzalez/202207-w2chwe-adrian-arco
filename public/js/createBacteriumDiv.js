@@ -16,8 +16,11 @@ const createWorldHtml = (worldToGenerate) => {
 
       if (bacteriumHouse.alive === true) {
         cellHouse.setAttribute("id", "bacteriumAlive");
+      } else if (bacteriumHouse.alive === false) {
+        cellHouse.setAttribute("id", "bacteriumDead");
+      } else {
+        console.log("no va");
       }
-      cellHouse.setAttribute("id", "bacteriumDead");
     });
   });
 };
