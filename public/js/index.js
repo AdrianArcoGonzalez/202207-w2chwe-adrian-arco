@@ -5,10 +5,10 @@ import createWorldHtml from "./createBacteriumDiv.js";
 
 const main = () => {
   const worldCreated = createWorld(45);
-  console.log(worldCreated);
   worldReader(worldCreated);
   createWorldHtml(worldCreated);
   killAndRevive(worldCreated);
+  createWorld(worldCreated);
 };
 
 main();
